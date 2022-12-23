@@ -23,7 +23,7 @@ def predict():
     result = pipe.predict(pd.DataFrame([[name, company, year, kms_driven, fuel_type]],columns=["name", "company", "year", "kms_driven", "fuel_type"]))
 
 
-    return jsonify({'predicted_price':str(result[0])})
+    return jsonify({'predicted_price':"Rs "+str(round(result[0]))})
 
 
 if __name__ == "__main__":
